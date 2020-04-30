@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import BookQuery from './bookQuery';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer  from './redux/reducer/bookQuery';
+import ViewWord from './viewWord/index'
 
+let store = createStore(reducer);
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ViewWord>
+    <BookQuery />
+  </ViewWord>,
   document.getElementById('root')
 );
 
